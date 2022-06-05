@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Cafe24Ohsquareair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/Cafe24Ohsquareair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cafe24Ohsquareair';
+    min-width: 320px;
+}
+
+body {
+    padding: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+:root {
+    --mint: #9ddfd3;
+    --green: #63a371;
+    --lightgreen: #a2d36d;
+}
+
+.title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--green);
+    border: 5px solid var(--green);
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    height: calc(100vh - 70px);
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1;
+    border: 5px solid lightblue;
+    margin-left: 10px;
+    align-content: flex-start;
+    overflow-y: scroll;
+}
+
+
+@media (max-width: 1000px) {
+    .card {
+        background: var(--mint);
+    }
+}
+
+@media (max-width: 700px) {
+    .card {
+        background: var(--green);
+    }
+}

@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "title": "소주 좋아요!",
+      "name": "소주",
+      "image": "/images/soju.png"
+    },
+    {
+      "id": "2",
+      "title": "샴페인 한번 먹어보고 싶다!",
+      "name": "샴페인",
+      "image": "/images/champagne.jpg"
+    },
+    {
+      "id": "3",
+      "title": "와인 완전 좋아요!",
+      "name": "와인",
+      "image": "/images/wine.jpg"
+    },
+    {
+      "name": "asdf",
+      "title": "ff",
+      "image": "ff",
+      "id": "FayC5qk"
+    },
+    {
+      "name": "asdf",
+      "title": "ff",
+      "image": "ff",
+      "id": "kYMWoVZ"
+    },
+    {
+      "name": "affffffffffffffff",
+      "title": "fffffffffff",
+      "image": "df",
+      "id": "LeWQJMQ"
+    },
+    {
+      "name": "dfa",
+      "title": "f",
+      "image": "fff",
+      "id": "mQzYG4n"
+    }
+  ]
+}

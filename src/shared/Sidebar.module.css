@@ -1,0 +1,31 @@
+.sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 120px;
+    flex-shrink: 0;
+    border: 5px solid #746abe;
+    padding: 10px;
+    color: #746abe;
+}
+
+.sidebar>span {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.addButton {
+    width: 90px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #6963a3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    border: 2px solid #6963a3;
+    background-color: white;
+    color: #6963a3;
+}

@@ -1,9 +1,8 @@
 import styles from "./Sidebar.module.css";
-import data from "../data/data.json";
 import Modal from './Modal';
 import { useState } from 'react';
 
-function Sidebar() {
+function Sidebar({ handleAddItem, data }) {
     const [open, setOpen] = useState(false);
 
     function openModal() {
@@ -18,11 +17,14 @@ function Sidebar() {
             <span key={index}>{data.name}</span>
         )
     }
+
+
+
     return (
         <div className={styles.sidebar} id="sidebar">
             <button className={styles.addButton} onClick={openModal}>추가</button>
-            {data['data'].map(name)}
-            <Modal open={open} close={closeModal} />
+            {data.map(name)}
+            <Modal open={open} close={closeModal} handleAddItem={handleAddItem} />
         </div>
     )
 }

@@ -1,34 +1,19 @@
 import styles from "./Modal.module.css";
 import axios from 'axios';
-import { useRef } from 'react';
+import { useState } from 'react';
 
-function Modal({ open, close }) {
-    function onSubmit(e) {
+function Modal({ open, close, handleAddItem }) {
+
+    const [name, setName] = useState("");
+    const [content, setContent] = useState("");
+    const [image, setImage] = useState("");
+
+    const onSubmit = (e) => {
         e.preventDefault();
-
-        axios.post(`http://localhost:3001/data`,
-            {
-                name: nameRef.current.value,
-                title: titleRef.current.value,
-                image: imageRef.current.value
-            },
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                }
-            }
-        )
-            .then(res => {
-                console.log("전송 성공");
-                close(false);
-            })
-            .catch(res => { console.log('Error!') });
+        console.log(name, content, image);
+        handleAddItem({ name, content, image });
+        close();
     };
-
-
-    const nameRef = useRef(null);
-    const imageRef = useRef(null);
-    const titleRef = useRef(null);
 
     return (
         <>
@@ -37,13 +22,16 @@ function Modal({ open, close }) {
                     <form class={styles.modal} onSubmit={onSubmit}>
                         <span class={styles.modalClose} onClick={close}>X</span>
                         <label for="name" class={styles.label}>이름</label>
-                        <input ref={nameRef} type="text" class={styles.modalInput} placeholder="오레오 와인" />
+                        <input id="name" type="text" class={styles.modalInput} placeholder="오레오 와인" value={name}
+                            onChange={(e) => setName(e.target.value)} />
 
                         <label for="image" class={styles.label}>이미지</label>
-                        <input ref={imageRef} type="text" class={styles.modalInput} placeholder="URL" />
+                        <input id="image" type="text" class={styles.modalInput} placeholder="URL" value={image}
+                            onChange={(e) => setImage(e.target.value)} />
 
                         <label for="content" class={styles.label}>내용</label>
-                        <input ref={titleRef} type="text" class={styles.modalInput} placeholder="오레오를 잘게 썰어 만들어요" />
+                        <input id="content" type="text" class={styles.modalInput} placeholder="오레오를 잘게 썰어 만들어요" value={content}
+                            onChange={(e) => setContent(e.target.value)} />
 
                         <button class={styles.saveButton}>저장하기</button>
                     </form>
